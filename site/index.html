@@ -3,186 +3,185 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f9fc">
-  <meta name="description" content="Free, student-led marketing direction to help small businesses strengthen their digital presence.">
-  <title>C20 Marketing: find your next move</title>
+  <meta name="theme-color" content="#070a0f">
+  <meta name="description" content="C20 is a student-led marketing team that helps small businesses get noticed, build their presence, and put useful marketing work into action for free.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="C20 Marketing | Good work deserves to be found">
+  <meta property="og:description" content="Free marketing direction and practical follow-through for small businesses.">
+  <title>C20 Marketing | Good work deserves to be found</title>
   <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
-  
-  <link rel="stylesheet" href="site.css">
+  <link rel="preload" href="assets/c20-space-storefront.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="site.css"><link rel="stylesheet" href="redesign.css"><script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+  <script defer src="site.js"></script>
 </head>
-<body>
+<body class="page-home">
   <a class="skip-link" href="#main">Skip to content</a>
-  <span class="scroll-progress" aria-hidden="true"></span>
-  <header class="masthead">
+  <header class="site-header">
     <a class="brand" href="index.html" aria-label="C20 Marketing home">
       <img src="assets/mark.svg" width="38" height="38" alt="">
-      <span><strong>C20</strong><small>MARKETING</small></span>
+      <span class="brand__word">C20<span>MARKETING</span></span>
     </a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span class="sr-only">Menu</span></button>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+      <span class="menu-toggle__label">Menu</span><span class="menu-toggle__icon" aria-hidden="true"><i></i><i></i></span>
+    </button>
     <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
       <a aria-current="page" href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="metrics.html">Success metrics</a>
-      <a href="work.html">Who we've worked with</a>
-      <a class="nav-cta" href="contact.html">Get free direction <span aria-hidden="true">↗</span></a>
+      <a href="work.html">Who we’ve worked with</a>
+      <a class="nav-cta" href="contact.html">Let’s grow your business <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="title-page" aria-labelledby="home-title">
-      <div class="space-scene" aria-hidden="true">
-        <img src="assets/c20-space-storefront.png" width="1536" height="1024" alt="">
-        <span class="space-scene__caption">C20 / FIND YOUR NORTH</span>
+    <section class="hero scene scene--dark" aria-labelledby="home-title">
+      <div class="hero__stars" aria-hidden="true"></div>
+      <div class="hero__art" aria-hidden="true">
+        <img class="hero__world" src="assets/c20-space-storefront.png" width="1536" height="1024" alt="">
+        <svg class="hero__orbit hero__orbit--back" viewBox="0 0 900 700"><ellipse cx="450" cy="350" rx="398" ry="184" transform="rotate(-29 450 350)"/><ellipse cx="450" cy="350" rx="324" ry="260" transform="rotate(24 450 350)"/></svg>
+        <svg class="hero__orbit hero__orbit--front" viewBox="0 0 900 700"><path d="M45 472C204 190 556 77 831 238"/><path d="M119 600C376 507 566 345 818 103"/></svg>
+        <span class="hero__node hero__node--one"></span><span class="hero__node hero__node--two"></span>
+        <span class="hero__art-label">A GOOD BUSINESS<br>IS ALREADY THERE</span>
       </div>
-      <div class="title-page__inner">
+      <div class="hero__copy">
         <p class="eyebrow"><span class="eyebrow__dot"></span> Student-led marketing for small business</p>
-        <h1 id="home-title">Good work<br>deserves to be <em>found.</em></h1>
-        <div class="title-page__bottom">
-          <p>Free digital marketing direction, shaped around the business you’ve built.</p>
-          <a class="text-link text-link--dark" href="contact.html">Get free direction <span aria-hidden="true">↗</span></a>
+        <h1 id="home-title"><span>Good work</span><span>deserves to be <em>found.</em></span></h1>
+        <p class="hero__dek">We help businesses get noticed, build their presence, and put useful marketing work into action. Completely free.</p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="contact.html">Let’s grow your business <span aria-hidden="true">↗</span></a>
+          <a class="button button--quiet" href="#difference">Explore C20 <span aria-hidden="true">↓</span></a>
         </div>
+        <p class="hero__note"><span>01</span> A small team. A clear direction. Work that moves.</p>
       </div>
-      <div class="title-page__folio" aria-hidden="true"><span>C20</span><span>INDEPENDENT MARKETING STUDIO</span></div>
+      <div class="hero__edge" aria-hidden="true"><span>C20 / INDEPENDENT MARKETING</span><span>IRINJALAKUDA · WORKING EVERYWHERE</span></div>
     </section>
 
-    <section class="chapter chapter--dark chapter--recognition" aria-labelledby="recognition-title">
-      <div class="chapter__inner recognition-layout">
-        <div class="chapter-copy">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> Running a business is already a lot</p>
-          <h2 id="recognition-title">Your online presence should help, not add another headache.</h2>
-          <p class="body-copy">You know what makes your business special. Finding the right way to show it online can be a different job altogether.</p>
-        </div>
-        <figure class="signal-art" aria-labelledby="signal-caption">
-          <svg viewBox="0 0 560 440" role="img" aria-labelledby="signal-title signal-desc">
-            <title id="signal-title">A small business finds its signal</title>
-            <desc id="signal-desc">A storefront, surrounded by scattered marks that gather into a clear route.</desc>
-            <path class="signal-art__orbit" d="M67 220c0-97 77-174 174-174s174 77 174 174-77 174-174 174S67 317 67 220Z"/>
-            <path class="signal-art__orbit signal-art__orbit--two" d="M112 220c0-72 58-129 129-129s129 57 129 129-58 129-129 129-129-57-129-129Z"/>
-            <path class="signal-art__route" d="m44 304 88-37 69 14 77-89 71 18 82-99"/>
-            <path class="signal-art__route signal-art__route--fine" d="m52 134 75 24 64-33 80 51 76-26 89 40"/>
-            <path class="signal-art__shop" d="M163 191h132v108H163zM151 191l12-33h132l12 33M180 219h35v80h-35zM232 219h46v31h-46zM232 263h46v36h-46z"/>
-            <path class="signal-art__roof" d="M156 190h156M174 169h109"/>
-            <circle class="signal-art__point" cx="44" cy="304" r="6"/><circle class="signal-art__point" cx="258" cy="192" r="8"/><circle class="signal-art__point signal-art__point--end" cx="431" cy="111" r="9"/>
-            <text class="signal-art__label" x="320" y="92">A CLEARER ROUTE</text>
-            <text class="signal-art__label signal-art__label--small" x="41" y="330">GOOD BUSINESS</text>
-          </svg>
-          <figcaption id="signal-caption">The work is already there. Let's help people see it.</figcaption>
-        </figure>
+    <section class="intro scene scene--ink" id="difference" aria-labelledby="intro-title">
+      <div class="section-wrap intro__layout">
+        <p class="eyebrow"><span class="eyebrow__dot"></span> For the businesses doing the work</p>
+        <h2 id="intro-title" class="display display--intro">You built something<br><em>worth noticing.</em></h2>
+        <p class="intro__copy">Running a business is already a full job. Finding the time and direction to show it well online can become another one.</p>
       </div>
+      <div class="intro__rule" aria-hidden="true"><span></span></div>
     </section>
 
-    <section class="chapter chapter--signal" id="direction-finder" aria-labelledby="finder-title">
-      <div class="chapter__inner">
-        <div class="chapter-heading">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> Start with the sticking point</p>
-          <h2 id="finder-title">What feels hardest<br>about showing up online?</h2>
-          <p class="body-copy">Pick the closest fit. We’ll offer a useful place to start, not a magic formula.</p>
+    <section class="difference scene scene--paper" aria-labelledby="difference-title">
+      <div class="section-wrap">
+        <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> The C20 difference</p>
+        <h2 id="difference-title" class="display display--difference">Not just advice.<br><em>Actual work.</em></h2>
+        <div class="difference__body">
+          <p class="difference__lead">A list of ideas still leaves you with the work.</p>
+          <p>We get to know the business, agree what would help, shape a practical direction, and work alongside you to put it into action. Every step stays clear, collaborative, and free.</p>
+          <a class="text-link text-link--dark" href="about.html">How C20 works <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="finder" data-direction-finder>
-          <div class="finder__choices" role="group" aria-label="Choose your marketing challenge">
-            <button class="finder-choice" type="button" data-challenge="discovery" aria-pressed="true"><span class="finder-choice__num">A</span><span>People don't find us.</span><span class="finder-choice__arrow" aria-hidden="true">↗</span></button>
-            <button class="finder-choice" type="button" data-challenge="attention" aria-pressed="false"><span class="finder-choice__num">B</span><span>People see us, then move on.</span><span class="finder-choice__arrow" aria-hidden="true">↗</span></button>
-            <button class="finder-choice" type="button" data-challenge="consistency" aria-pressed="false"><span class="finder-choice__num">C</span><span>Our efforts feel scattered.</span><span class="finder-choice__arrow" aria-hidden="true">↗</span></button>
+      </div>
+      <div class="difference__seal" aria-hidden="true"><span>C20</span><i></i><small>THINK / MAKE / IMPROVE</small></div>
+    </section>
+
+    <section class="signal scene scene--dark" id="signal-finder" aria-labelledby="signal-title">
+      <div class="section-wrap">
+        <div class="signal__heading">
+          <p class="eyebrow"><span class="eyebrow__dot"></span> Find a useful first move</p>
+          <h2 id="signal-title" class="display">What feels hardest<br>about showing up online?</h2>
+          <p>Choose the closest fit. The route will show one place to start, not a magic formula.</p>
+        </div>
+        <div class="signal-map" data-direction-finder>
+          <div class="signal-map__choices" role="group" aria-label="Choose the marketing challenge closest to yours">
+            <button class="signal-choice" type="button" data-challenge="discovery" aria-pressed="true"><span class="signal-choice__number">01</span><span>People don’t find us.</span><span class="signal-choice__arrow" aria-hidden="true">↗</span></button>
+            <button class="signal-choice" type="button" data-challenge="attention" aria-pressed="false"><span class="signal-choice__number">02</span><span>People see us, then move on.</span><span class="signal-choice__arrow" aria-hidden="true">↗</span></button>
+            <button class="signal-choice" type="button" data-challenge="consistency" aria-pressed="false"><span class="signal-choice__number">03</span><span>Our efforts feel scattered.</span><span class="signal-choice__arrow" aria-hidden="true">↗</span></button>
           </div>
-          <div class="finder-result" aria-live="polite" aria-atomic="true">
-            <p class="finder-result__label">A place to start</p>
-            <p class="finder-result__text" data-finder-copy>Make one clear route from the question a customer asks to the place they can find you.</p>
-            <a class="text-link text-link--light" data-finder-link href="contact.html?focus=discovery">Bring this to C20 <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="chapter chapter--paper" aria-labelledby="method-title">
-      <div class="chapter__inner">
-        <div class="method-intro">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> Our way of working</p>
-          <h2 id="method-title">First understand.<br>Then make a plan.</h2>
-          <p class="body-copy">We start with the personality of the business, what success means to you, and what is getting in the way.</p>
-        </div>
-        <div class="method-pan">
-          <div class="method-stage">
-            <div class="method-list">
-              <div class="method-rail-heading"><span class="method-step__index">C20</span><strong>Three considered<br>steps forward.</strong></div>
-          <article class="method-step">
-            <span class="method-step__index">01</span>
-            <h3>Listen</h3>
-            <p>Learn what you do, who you serve, and what you want to change.</p>
-          </article>
-          <article class="method-step">
-            <span class="method-step__index">02</span>
-            <h3>Find direction</h3>
-            <p>Shape a practical plan around your goals, capacity, and audience.</p>
-          </article>
-          <article class="method-step">
-            <span class="method-step__index">03</span>
-            <h3>Follow through</h3>
-            <p>Move forward with clear communication and your consent at each step.</p>
-          </article>
+          <div class="signal-map__route">
+            <svg class="signal-route" viewBox="0 0 560 190" role="img" aria-labelledby="route-label route-desc" preserveAspectRatio="none">
+              <title id="route-label">A route from a challenge to a useful next step</title>
+              <desc id="route-desc">The highlighted path changes when you choose a challenge.</desc>
+              <path class="signal-route__base" d="M18 146C104 146 98 44 188 44S271 146 356 146 438 44 542 44"/>
+              <path class="signal-route__active" d="M18 146C104 146 98 44 188 44S271 146 356 146 438 44 542 44"/>
+              <circle class="signal-route__point" cx="18" cy="146" r="7"/><circle class="signal-route__point signal-route__point--end" cx="542" cy="44" r="10"/>
+            </svg>
+            <div class="signal-map__result" aria-live="polite" aria-atomic="true">
+              <p class="signal-map__label" data-finder-label>A place to start</p>
+              <h3 data-finder-copy>Make one clear route from a customer’s question to the place they can find you.</h3>
+              <a class="text-link text-link--light" data-finder-link href="contact.html?focus=discovery">Bring this to C20 <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
-        <p class="method-note">No one-size-fits-all playbook. No work moves ahead without a conversation.</p>
       </div>
     </section>
 
-    <section class="chapter chapter--dark chapter--measure" aria-labelledby="measure-title">
-      <div class="chapter__inner measure-layout">
-        <div class="chapter-copy">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> A better question than “did it go viral?”</p>
-          <h2 id="measure-title">Make progress visible in the right places.</h2>
-          <p class="body-copy">We agree on what matters first, then watch the signals that help answer whether the work is moving toward it.</p>
-          <a class="text-link text-link--light" href="metrics.html">How we think about success <span aria-hidden="true">↗</span></a>
+    <section class="work-together scene scene--blue" aria-labelledby="together-title">
+      <div class="section-wrap together__layout">
+        <div class="together__intro">
+          <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> What the work can look like</p>
+          <h2 id="together-title" class="display display--together">A plan that<br>gets <em>put to work.</em></h2>
+          <p>There is no fixed package. We shape the work around the business, the people it serves, and the time it has.</p>
         </div>
-        <div class="measure-diagram" role="img" aria-label="A measurement path from business goal to useful signal to next decision">
-          <div class="measure-diagram__row"><span>BUSINESS GOAL</span><b>What are we trying to change?</b></div>
-          <div class="measure-diagram__connector" aria-hidden="true"></div>
-          <div class="measure-diagram__row"><span>USEFUL SIGNAL</span><b>What would help us see progress?</b></div>
-          <div class="measure-diagram__connector" aria-hidden="true"></div>
-          <div class="measure-diagram__row measure-diagram__row--accent"><span>NEXT DECISION</span><b>What do we learn and adjust?</b></div>
-        </div>
+        <ol class="collab-list">
+          <li><span>Understand</span><p>Get to know the business, its audience, goals, and current digital presence.</p></li>
+          <li><span>Find direction</span><p>Agree a practical next step that fits the business and what it wants to change.</p></li>
+          <li><span>Work through it</span><p>Help carry the plan into action with communication and consent along the way.</p></li>
+        </ol>
       </div>
     </section>
 
-    <section class="chapter chapter--founders" aria-labelledby="founders-title">
-      <div class="chapter__inner">
-        <div class="founders-heading">
-          <p class="eyebrow"><span class="eyebrow__dot"></span> A student-led team, one shared curiosity</p>
-          <h2 id="founders-title">Meet the people<br>behind C20.</h2>
-          <a class="text-link text-link--dark" href="about.html">Read our story <span aria-hidden="true">↗</span></a>
+    <section class="process scene scene--ink" aria-labelledby="process-title">
+      <div class="section-wrap">
+        <div class="process__heading">
+          <div><p class="eyebrow"><span class="eyebrow__dot"></span> Clear from the first conversation</p><h2 id="process-title" class="display">Four steps.<br><em>One shared direction.</em></h2></div>
+          <a class="text-link text-link--light" href="metrics.html">How we measure progress <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="founder-preview">
-          <article class="founder-preview__person">
-            <span class="founder-preview__letter" aria-hidden="true">K</span>
-            <div><h3>Krishna Sai Kannan</h3><p>Interested in marketing, research, sport, and the arts.</p></div>
-          </article>
-          <article class="founder-preview__person">
-            <span class="founder-preview__letter" aria-hidden="true">H</span>
-            <div><h3>Hannah Ann Leejo</h3><p>Editor interested in writing, communication, science, and technology.</p></div>
-          </article>
-          <article class="founder-preview__person">
-            <span class="founder-preview__letter founder-preview__letter--second" aria-hidden="true">N</span>
-            <div><h3>Neha Maria Tedy</h3><p>Editor drawn to visual storytelling, video, editing, and travel.</p></div>
-          </article>
-          <article class="founder-preview__person">
-            <span class="founder-preview__letter founder-preview__letter--second" aria-hidden="true">P</span>
-            <div><h3>Prithvik T Hanson</h3><p>Curious about consumer psychology, strategy, and decision-making.</p></div>
-          </article>
-        </div>
+        <div class="process-line" aria-hidden="true"><span class="process-line__track"></span><span class="process-line__progress"></span></div>
+        <ol class="process-list">
+          <li><span class="process-list__number">01</span><h3>Discover</h3><p>We listen and learn what makes the business, its audience, and its goals distinct.</p></li>
+          <li><span class="process-list__number">02</span><h3>Strategize</h3><p>We shape a practical marketing direction around the outcome that matters to you.</p></li>
+          <li><span class="process-list__number">03</span><h3>Execute</h3><p>We help put the agreed work into motion, together with the business.</p></li>
+          <li><span class="process-list__number">04</span><h3>Improve</h3><p>We review useful signals, learn what they mean, and adjust the next step.</p></li>
+        </ol>
       </div>
     </section>
 
-    <section class="colophon" aria-labelledby="close-title">
-      <div class="colophon__inner">
-        <p class="eyebrow"><span class="eyebrow__dot"></span> A clearer next step starts with a conversation</p>
-        <h2 id="close-title">Tell us what you're<br>trying to figure out.</h2>
-        <a class="text-link text-link--light" href="contact.html">Get free direction <span aria-hidden="true">↗</span></a>
+    <section class="thinking scene scene--paper" aria-labelledby="thinking-title">
+      <div class="section-wrap thinking__layout">
+        <div><p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> How we think</p><h2 id="thinking-title" class="display display--thinking">Better marketing<br>starts with <em>people.</em></h2></div>
+        <div class="thinking__copy"><p>Why does someone choose this business? What makes its offer matter to the people it serves? What is getting in the way of that connection?</p><p>Those questions shape the message and the next move. We connect what the business knows about itself with what its audience needs to understand.</p><a class="text-link text-link--dark" href="metrics.html">What progress can mean <span aria-hidden="true">↗</span></a></div>
       </div>
+      <div class="thinking__orbit" aria-hidden="true"><span>BUSINESS</span><i></i><span>AUDIENCE</span><i></i><span>CHOICE</span></div>
+    </section>
+
+    <section class="team-preview scene scene--dark" aria-labelledby="team-title">
+      <div class="section-wrap">
+        <div class="team-preview__top"><div><p class="eyebrow"><span class="eyebrow__dot"></span> A student-led team, one shared curiosity</p><h2 id="team-title" class="display">Meet the people<br>behind <em>C20.</em></h2></div><a class="text-link text-link--light" href="about.html">Meet the team <span aria-hidden="true">↗</span></a></div>
+        <ul class="team-index">
+          <li><span class="team-index__initial">K</span><span class="team-index__name">Krishna Sai Kannan</span><span class="team-index__role">Co-founder</span></li>
+          <li><span class="team-index__initial">P</span><span class="team-index__name">Prithvik T Hanson</span><span class="team-index__role">Co-founder</span></li>
+          <li><span class="team-index__initial">H</span><span class="team-index__name">Hannah Ann Leejo</span><span class="team-index__role">Editor</span></li>
+          <li><span class="team-index__initial">N</span><span class="team-index__name">Neha Maria Tedy</span><span class="team-index__role">Editor</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="free-model scene scene--blue" aria-labelledby="free-title">
+      <div class="section-wrap free-model__layout">
+        <p class="eyebrow eyebrow--dark"><span class="eyebrow__dot"></span> Why free?</p>
+        <h2 id="free-title" class="display display--free">Good work<br>shouldn’t need<br>a big <em>budget.</em></h2>
+        <div><p>C20 is a student-led team that wants to put its curiosity and marketing skills to useful work. The support described here is free for the businesses we work with.</p><p>We agree what would help, communicate clearly, and move ahead together. There are no results or fixed services promised on this page.</p><a class="text-link text-link--dark" href="work.html">See who we work with <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="closing scene scene--dark" aria-labelledby="closing-title">
+      <div class="closing__stars" aria-hidden="true"></div>
+      <div class="section-wrap closing__inner"><p class="eyebrow"><span class="eyebrow__dot"></span> Your business has potential</p><h2 id="closing-title" class="display display--closing">Let’s make it<br><em>visible.</em></h2><p>Tell us what you’re trying to figure out. We’ll start by listening.</p><a class="button button--primary button--large" data-magnetic="0.16" href="contact.html">Let’s grow your business <span aria-hidden="true">↗</span></a></div>
+      <span class="closing__mark" aria-hidden="true">C20</span>
     </section>
   </main>
-  <footer class="site-footer"><a class="footer-brand" href="index.html">C20 <span>MARKETING</span></a><p>Student-led. Small-business focused.</p><a href="contact.html">Start with a question ↗</a><span>© C20 Marketing</span></footer>
-  
-  <script src="site.js"></script>
+
+  <footer class="site-footer">
+    <a class="brand brand--footer" href="index.html"><img src="assets/mark.svg" width="34" height="34" alt=""><span class="brand__word">C20<span>MARKETING</span></span></a>
+    <p>Student-led. Small-business focused. Always free.</p>
+    <nav aria-label="Footer navigation"><a href="about.html">About</a><a href="work.html">Clients</a><a href="contact.html">Contact</a></nav>
+    <small>© <span data-year>2026</span> C20 Marketing</small>
+  </footer>
 </body>
 </html>
 

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-labelledby="title">
+  <title id="title">C20 mark</title>
+  <rect x="1" y="1" width="46" height="46" fill="#111b2a"/>
+  <path d="M33.5 14.4a13 13 0 1 0 0 19.2" fill="none" stroke="#a8c7e0" stroke-width="4.5" stroke-linecap="square"/>
+  <path d="M27 24h13m-5-5 5 5-5 5" fill="none" stroke="#f4b477" stroke-width="2.8" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
+

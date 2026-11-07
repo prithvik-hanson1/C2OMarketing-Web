@@ -57,7 +57,13 @@
     const fallbackTimer = window.setTimeout(() => {
       if (!image.complete) showFallback();
     }, 3500);
-    image.addEventListener('load', () => window.clearTimeout(fallbackTimer), { once: true });
+    image.addEventListener('load', () => {
+      window.clearTimeout(fallbackTimer);
+      const figure = image.closest('.client-card__media');
+      figure?.querySelector('.client-card__fallback')?.remove();
+      figure?.classList.remove('is-fallback');
+      image.hidden = false;
+    }, { once: true });
     if (image.complete && !image.naturalWidth) showFallback();
   });
 

@@ -1,7 +1,33 @@
 [build]
+  command = "node build.mjs"
   publish = "site"
 
 [[redirects]]
   from = "/home"
   to = "/index.html"
   status = 301
+
+[[redirects]]
+  from = "/metrics"
+  to = "/process.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/metrics.html"
+  to = "/process.html"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+

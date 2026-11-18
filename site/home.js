@@ -1,3 +1,4 @@
+document.documentElement.classList.add('home-ready');
 (() => {
   const menuButton = document.querySelector('.menu-toggle');
   const menu = document.querySelector('#primary-nav');
@@ -9,14 +10,14 @@
   if (menuButton && menu) {
     menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
     menu.addEventListener('click', (event) => { if (event.target.closest('a')) setMenu(false); });
-    document.addEventListener('keydown', (event) => { if (event.key === 'Escape') { setMenu(false); menuButton.focus(); } });
-    window.addEventListener('resize', () => { if (window.innerWidth > 900) setMenu(false); }, { passive: true });
+    document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') { setMenu(false); menuButton.focus(); } });
+    window.addEventListener('resize', () => { if (window.innerWidth > 1050) setMenu(false); }, { passive: true });
   }
 
   const directions = {
-    discovery: { label: "People don't find us.", advice: 'Make one clear route from the question a customer asks to the place they can find you.', offset: '680' },
-    attention: { label: 'People see us, then move on.', advice: 'Check whether each post gives an interested person one next step that fits what they need.', offset: '425' },
-    consistency: { label: 'Our efforts feel scattered.', advice: 'Choose one repeatable theme that says what makes your business useful, then build from there.', offset: '150' }
+    discovery: { label: "People don't find us.", advice: 'Make one clear route from the question a customer asks to the place they can find you.', service: 'google-profile', offset: '680' },
+    attention: { label: 'People see us, then move on.', advice: 'Make your message and visual identity clear, so an interested customer knows what to do next.', service: 'identity', offset: '425' },
+    consistency: { label: 'Our efforts feel scattered.', advice: 'Choose one repeatable theme that says what makes your business useful, then build from there.', service: 'starter-kit', offset: '150' }
   };
   const finder = document.querySelector('[data-direction-finder]');
   if (finder) {
@@ -30,42 +31,11 @@
       if (!selected) return;
       choices.forEach((choice) => choice.setAttribute('aria-pressed', String(choice === button)));
       advice.textContent = selected.advice;
-      link.href = `contact.html?focus=${encodeURIComponent(key)}`;
+      link.href = `/contact.html?service=${encodeURIComponent(selected.service)}`;
       if (activeRoute) activeRoute.style.strokeDashoffset = selected.offset;
     }));
   }
-  const challenge = document.querySelector('[name="challenge"]');
-  if (challenge) {
-    const picked = directions[new URLSearchParams(location.search).get('focus')];
-    if (picked) challenge.value = `I chose this starting point in the C20 Direction Finder: “${picked.label}”\n\n`;
-  }
-
-  document.querySelectorAll('[data-year]').forEach((node) => { node.textContent = String(new Date().getFullYear()); });
-  document.querySelectorAll('.client-card__media img').forEach((image) => {
-    const showFallback = () => {
-      image.hidden = true;
-      const figure = image.closest('.client-card__media');
-      if (!figure || figure.querySelector('.client-card__fallback')) return;
-      figure.classList.add('is-fallback');
-      const fallback = document.createElement('span');
-      fallback.className = 'client-card__fallback';
-      fallback.setAttribute('aria-hidden', 'true');
-      fallback.textContent = image.alt.toLowerCase().includes('tea') ? 'TT' : 'SW';
-      figure.append(fallback);
-    };
-    image.addEventListener('error', showFallback, { once: true });
-    const fallbackTimer = window.setTimeout(() => {
-      if (!image.complete) showFallback();
-    }, 3500);
-    image.addEventListener('load', () => {
-      window.clearTimeout(fallbackTimer);
-      const figure = image.closest('.client-card__media');
-      figure?.querySelector('.client-card__fallback')?.remove();
-      figure?.classList.remove('is-fallback');
-      image.hidden = false;
-    }, { once: true });
-    if (image.complete && !image.naturalWidth) showFallback();
-  });
+  document.querySelectorAll('[data-year]').forEach(node => { node.textContent = String(new Date().getFullYear()); });
 
   // Progressive enhancement: no content depends on animation to be visible.
   const gsap = window.gsap;
@@ -78,7 +48,7 @@
     const hero = document.querySelector('.hero');
     if (hero) {
       gsap.from(hero.querySelectorAll('.eyebrow, h1 > span, .hero__dek, .hero__actions, .hero__note'), {
-        y: 18, opacity: 0, duration: .78, stagger: .09, ease: 'power3.out', delay: .08, clearProps: 'all'
+        y: 18, duration: .78, stagger: .09, ease: 'power3.out', delay: .08, clearProps: 'all'
       });
       const art = hero.querySelector('.hero__art');
       if (art) gsap.to(art, { yPercent: -5, ease: 'none', scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: .8 } });
@@ -102,4 +72,3 @@
     return () => cleanups.forEach((cleanup) => cleanup());
   });
 })();
-

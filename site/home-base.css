@@ -463,4 +463,3 @@ html, body { background: #070b13; color: #f7f9fc; }
 @media (prefers-reduced-motion: reduce) {
   .text-link, .finder-choice, .nav-cta, .button { transition-duration: 1ms; }
 }
-
